@@ -12,7 +12,7 @@ create a pointer to dummyhead called curr
 create a variable named carry for addition carryover
 create a while loop that checks whether l1 l2 haven't been fully iterated through and lets carry be added regardless (edge case)
 initialize pointers to l1,l2's
-calculate the sum of each column in the addition, l1Val + l2Val + carry 
+calculate the sum of each column in the addition, l1Val + l2Val + carry
 get carry by dividing the sum by 10
 get the actual value of the sum by taking the leftover numbers from the carry
 update curr.next as newNode, and set curr = to newNode so next iteration can start from there
@@ -22,10 +22,12 @@ Difference between this and python:
 Virtually none, only difference is that you have to use & to get addresses
 also, you could remove newNode and just put & + ListNode{...} to simplify code
 */
+package main
 
 import (
-    "fmt"
+	"fmt"
 )
+
 func addTwoNumbers(l1 *ListNode, l2 *ListNode) *ListNode {
     dummyHead := ListNode{Val: 0}
     curr := &dummyHead
@@ -55,6 +57,5 @@ func addTwoNumbers(l1 *ListNode, l2 *ListNode) *ListNode {
             l2 = nil
         }
     }
-    fmt.Println(dummyHead.Next)
     return dummyHead.Next
 }
